@@ -1,0 +1,113 @@
+.hero{
+    height: auto;
+    width: 100%;
+    position: relative;
+    top:0px;
+    z-index:1;
+}
+
+.swiper{
+    position: relative;
+  }
+  .swiper-wrapper{
+    width:100%;
+    height: auto;
+  }
+
+  .swiper_buttonConatiner{
+    position: absolute;
+    bottom:50px !important;
+    left: 45%;
+    display: flex;
+    width: 10%;
+  }
+  .swiper-pagination{
+    bottom: 35px !important;
+  }
+  .swiper-button-next, .swiper-button-prev{
+    border: 1px solid #D0D5DD;
+    background-color:#F9FAFB;
+width: 48px;
+height: 48px;
+border-radius: 50%;
+
+  }
+  .swiper-button-next svg,.swiper-button-prev svg{
+width: 10px;
+height: 10px;
+  }
+
+  .swiper-button-prev svg{
+    transform: rotate(180deg);
+  }
+  .swiper-slide.hero1,.swiper-slide.hero2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .swiper-slide.hero1{
+    background-image: url(../image/hero_slide1.webp);
+
+  }
+  .swiper-slide.hero2{
+    background-image: url(../image/hero_slide2.webp);
+  }
+
+
+  .swiper-slide_container{
+   margin-left: 150px;
+   margin-right: 150px;
+    padding-top: 300px;
+top: 100px;
+
+  }
+
+
+  .swiper-slide_container .size_72{
+    color: var(--text-white);
+    max-width: 932px;
+    margin-bottom: 30px;
+  }
+  .swiper-slide_container__flex{
+    display: flex;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+  .swiper-slide_container__flex__mini{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 320px;
+  }
+  .swiper-slide_container__flex__mini .size_24,
+  .swiper-slide_container__flex__mini .size_18{
+    color: var(--text-white);
+  }
+  .swiper-slide_container__flex__mini .size_18{
+    font-weight: 300;
+    line-height: 28px;
+    text-align: left;
+  }
+  .swiper-slide_container_button{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 112px;
+  }
+  .swiper-slide_container_button a{
+    display: block;
+  }
+  .swiper-slide_container_button .blue_button{
+    padding: 14px 30px;
+font-size: 18px;
+font-weight: 500;
+line-height: 28px;
+  }
+
+  /* Tooltip */
+  .tippy-tooltip{
+    padding: 8px 12px;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+text-align: center;
+  }

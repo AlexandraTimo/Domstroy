@@ -1,0 +1,36 @@
+
+.mySwiper4 .swiper-slide{
+    width: 243px !important;
+}
+
+/* АДАПТИВ */
+
+@media screen and (min-width: 0px) and (max-width:768px) {
+    .mySwiper4 .swiper-slide{
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width:1024px) {
+
+    .eleven .second_wrapper_main__header {
+        display: flex;
+        flex-direction: row !important;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width:1200px) {
+
+    .eleven .second_wrapper_main__header {
+        display: flex;
+        flex-direction: row !important;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width:1400px) {
+
+    .eleven .second_wrapper_main__header {
+        display: flex;
+        flex-direction: row !important;
+    }
+}

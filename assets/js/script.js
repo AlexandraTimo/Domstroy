@@ -136,10 +136,6 @@ menuItem.addEventListener('mouseleave', () => {
   submenu.classList.remove('activated'); // Удаляем класс "activated"
 });
 
-
-
-
-
 // подсказки на кнопки
 tippy('#calck', {
     content: "Рассчитать стоимость",
@@ -153,60 +149,141 @@ tippy('#calck', {
     duration:'1000'
   });
 
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuItems = document.querySelectorAll('#main-menu .menu-item');
-    const submenuItems = document.getElementById('submenu-items');
-    const threeDots = document.getElementById('three-dots');
-
-    function adjustMenu() {
-        const screenWidth = window.innerWidth;
-        const maxVisibleItems = Math.floor(screenWidth / 120); // Измените 120 на ширину одного пункта меню
-
-        let hiddenItems = [];
-
-        menuItems.forEach((item, index) => {
-            if (index < maxVisibleItems) {
-                item.classList.remove('hidden');
-            } else {
-                item.classList.add('hidden');
-                hiddenItems.push(item.cloneNode(true)); // Сохраняем скрытые пункты
-            }
+// табы
+function showTab(tabId, tabElement) {
+    // Проверяем, активна ли вкладка
+    if (!tabElement.classList.contains('active')) {
+        // Скрываем все контейнеры с содержимым
+        const contents = document.querySelectorAll('.item-content');
+        contents.forEach(content => {
+            content.classList.remove('active');
         });
 
-        // Обновляем подменю
-        submenuItems.innerHTML = ''; // Очищаем подменю
-        if (hiddenItems.length > 0) {
-            hiddenItems.forEach(item => {
-                const newItem = document.createElement('li');
-                newItem.textContent = item.textContent; // Копируем текст
-                newItem.classList.add('menu-item'); // Добавляем класс для стилей
-                submenuItems.appendChild(newItem);
-            });
-        }
+        // Показываем выбранный контейнер
+        const activeContent = document.getElementById(tabId);
+        activeContent.classList.add('active');
+
+        // Убираем класс active у всех вкладок
+        const tabs = document.querySelectorAll('.tab-links div');
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Добавляем класс active к текущей вкладке
+        tabElement.classList.add('active');
     }
+}
 
-    // Изначальная настройка
-    adjustMenu();
+// Автоматически открываем первую вкладку при загрузке страницы
+document.addEventListener("DOMContentLoaded", function() {
+    showTab('tab1', document.querySelector('.tab-links div.active'));
+});
 
-    // Обработчик события изменения размера окна
-    window.addEventListener('resize', adjustMenu);
 
-    // Обработчик событий для отображения подменю
-    threeDots.addEventListener('mouseenter', () => {
-        submenuItems.classList.add('visible');
+// Показаьб больше в акциях
+document.getElementById('show-more').addEventListener('click', function() {
+    const hiddenPosts = document.querySelectorAll('.post-item_actions[style*="display:none"]');
+    hiddenPosts.forEach(post => {
+        post.style.display = 'block';
     });
+    this.style.display = 'none';
+});
 
-    threeDots.addEventListener('mouseleave', () => {
-        submenuItems.classList.remove('visible');
-    });
 
-    submenuItems.addEventListener('mouseenter', () => {
-        submenuItems.classList.add('visible');
-    });
 
-    submenuItems.addEventListener('mouseleave', () => {
-        submenuItems.classList.remove('visible');
+// вопрос ответ
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.accordion-icon');
+        content.classList.toggle('open'); // Добавляем или убираем класс open
+
+        // Переключить знак
+        if (content.classList.contains('open')) {
+            icon.textContent = '-';
+            header.classList.add('active'); // Добавляем класс active
+        } else {
+            icon.textContent = '+';
+            header.classList.remove('active'); // Убираем класс active
+        }
+
+        // Закрыть другие открытые разделы
+        document.querySelectorAll('.accordion-content').forEach(otherContent => {
+            if (otherContent !== content) {
+                otherContent.classList.remove('open');
+                otherContent.previousElementSibling.querySelector('.accordion-icon').textContent = '+';
+                otherContent.previousElementSibling.classList.remove('active');
+            }
+        });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   document.addEventListener('DOMContentLoaded', function() {
+//     const menuItems = document.querySelectorAll('#main-menu .menu-item');
+//     const submenuItems = document.getElementById('submenu-items');
+//     const threeDots = document.getElementById('three-dots');
+
+//     function adjustMenu() {
+//         const screenWidth = window.innerWidth;
+//         const maxVisibleItems = Math.floor(screenWidth / 120);
+
+//         let hiddenItems = [];
+
+//         menuItems.forEach((item, index) => {
+//             if (index < maxVisibleItems) {
+//                 item.classList.remove('hidden');
+//             } else {
+//                 item.classList.add('hidden');
+//                 hiddenItems.push(item.cloneNode(true));
+//             }
+//         });
+
+
+//         submenuItems.innerHTML = '';
+//         if (hiddenItems.length > 0) {
+//             hiddenItems.forEach(item => {
+//                 const newItem = document.createElement('li');
+//                 newItem.textContent = item.textContent;
+//                 newItem.classList.add('menu-item');
+//                 submenuItems.appendChild(newItem);
+//             });
+//         }
+//     }
+
+
+//     adjustMenu();
+
+
+//     window.addEventListener('resize', adjustMenu);
+
+
+//     threeDots.addEventListener('mouseenter', () => {
+//         submenuItems.classList.add('visible');
+//     });
+
+//     threeDots.addEventListener('mouseleave', () => {
+//         submenuItems.classList.remove('visible');
+//     });
+
+//     submenuItems.addEventListener('mouseenter', () => {
+//         submenuItems.classList.add('visible');
+//     });
+
+//     submenuItems.addEventListener('mouseleave', () => {
+//         submenuItems.classList.remove('visible');
+//     });
+// });
+

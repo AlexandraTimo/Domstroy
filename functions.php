@@ -6,8 +6,13 @@ function theme_name_scripts() {
 wp_enqueue_style( 'swipercss', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'  );
 wp_enqueue_style( 'style', get_template_directory_uri() .'/assets/css/style.css'  );
 wp_enqueue_style( 'tippycss', 'https://unpkg.com/tippy.js@5/dist/backdrop.css'  );
-wp_enqueue_script( 'jquery' );
+wp_enqueue_style( 'tippycss', 'https://unpkg.com/tippy.js@5/dist/backdrop.css'  );
+wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com'  );
+wp_enqueue_style( 'fonts2', 'https://fonts.gstatic.com'  );
+wp_enqueue_style( 'fonts3', 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'  );
 
+
+wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'popper', 'https://unpkg.com/popper.js@1');
 wp_enqueue_script( 'tippyJs', 'https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js');
 wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
@@ -46,7 +51,9 @@ function svg_upload_allow( $mimes ) {
 register_nav_menus(array(
     'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
     'bottom' => 'Нижнее меню' ,
-    'sub'=> 'Субменю'
+    'sub'=> 'Субменю',
+
+
          //Название другого месторасположения меню в шаблоне
 ));
 

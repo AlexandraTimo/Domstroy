@@ -1,0 +1,67 @@
+.eight .wrapper_container .size_48{
+    color: var(--text-black);
+}
+.about_container{
+    display: flex;
+    margin-top: 40px;
+    gap: 32px;
+}
+.about_container_box .white_button{
+    margin-top: 40px;
+    display: block;
+    width: 30%;
+}
+.about_container_box .size_16{
+    font-weight: 300;
+}
+.about_container_box{
+    width: 50%;
+}
+
+/* АДАПТИВ */
+@media screen and (min-width: 0px) and (max-width:768px) {
+    .eight .wrapper_container {
+        padding: 0px 16px 80px 16px;
+        height: auto;
+    }
+    .about_container{
+        display: flex;
+        flex-direction:column-reverse;
+
+    }
+
+    .eight .wrapper_container .size_48{
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 38px;
+    }
+    .about_container_box{
+        width: 100%;
+    }
+    .about_container_box .white_button{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width:1024px) {
+    .eight .wrapper_container {
+        padding: 0px 32px 80px 32px;
+        height: auto;
+    }
+    .about_container{
+        display: flex;
+        flex-direction:column-reverse;
+    }
+
+    .eight .wrapper_container .size_48{
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 38px;
+    }
+    .about_container_box{
+        width: 100%;
+    }
+    .about_container_box .white_button{
+        width: 30%;
+    }
+}

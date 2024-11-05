@@ -1,0 +1,56 @@
+.wrapper_container_box{
+    display: flex;
+}
+.wrapper_container_box_mini{
+    width: 50%;
+}
+
+.wrapper_container_box_mini.navy{
+    padding: 94px 100px;
+    background-color:#182230;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.wrapper_container_box_mini.navy p{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    color:  var(--text-white);
+    padding-bottom: 16px;
+}
+.wrapper_container_box_mini.navy .size_18{
+    font-weight: 300;
+    color: #F9FAFB;
+}
+.wrapper_container_box_mini.navy .blue_button{
+    margin-top: 40px;
+    padding: 14px 30px;
+    width: 161px;
+    display: block;
+}
+
+
+.wrapper_container_box_mini.img{
+        background-image: url('../image/imgBGbanner.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    /* АДАПТИВ */
+
+    @media screen and (min-width: 0px) and (max-width:1024px) {
+        .wrapper_container_box_mini.navy{
+            padding: 50px 72px;
+        }
+        .wrapper_container_box_mini.navy p{
+font-size: 30px;
+font-weight: 500;
+line-height: 38px;
+
+        }
+    }
+
